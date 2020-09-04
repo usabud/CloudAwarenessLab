@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
  
     steps:
+    - uses: sfdx-actions/setup-pmd@v1
+    - name: run-pmd
+      run: pmd -d ./force-app/main/default/classes -R category/apex/design.xml -f text
     - uses: actions/checkout@v2
     - name: build-push
       uses: docker/build-push-action@v1
@@ -19,5 +22,5 @@ jobs:
         username: ${{ secrets.skollnope }}
         password: ${{ secrets.playstation117 }}
         registry: docker.io
-        repository: 3r1co/cd
+        repository: skollnope/mywebserver
         tag_with_sha: true
