@@ -27,7 +27,7 @@ jobs:
         npm install --production --unsafe-perm
         
     - name: Archive dependency check reports
-      uses: actions/upload-artifact@v1
+      uses: skollnope/dependency-check-action@master
       with:
         name: reports
         path: reports
