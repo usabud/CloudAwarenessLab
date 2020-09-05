@@ -13,9 +13,6 @@ jobs:
  
     steps:
     - uses: actions/checkout@v2
-      with:
-        # Disabling shallow clone is recommended for improving relevancy of reporting
-        fetch-depth: 0
     - name: build-push
       uses: docker/build-push-action@v1
       with:
@@ -25,8 +22,8 @@ jobs:
         repository: skollnope/mywebserver
         tag_with_sha: true
     - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@v1.4env
+      uses: sonarsource/sonarcloud-github-action@master
       env:
-        GITHUB_TOKEN: ${{ secrets.skollnope }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
