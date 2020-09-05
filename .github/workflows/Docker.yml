@@ -22,7 +22,8 @@ jobs:
         repository: skollnope/mywebserver
         tag_with_sha: true
     - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@v1.4env:
+      uses: SonarSource/sonarcloud-github-action@v1.4env
+      env:
         GITHUB_TOKEN: skollnope
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
