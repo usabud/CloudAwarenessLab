@@ -24,6 +24,6 @@ jobs:
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v1.4env
       env:
-        GITHUB_TOKEN: skollnope
+        GITHUB_TOKEN: ${{ secrets.skollnope }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
